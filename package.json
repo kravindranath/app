@@ -1,0 +1,13 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "repository": "git@github.com:kravindranath/app.git",
+  "author": "Ravindranath K <ravindranath.k@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "server" : "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
