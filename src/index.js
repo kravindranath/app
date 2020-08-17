@@ -1,12 +1,10 @@
-function insertElem() {
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-    var elem = document.createElement('div');
-
-    elem.innerHTML = 'Hello World!';
-
-    return elem;
-
-
+function App(){
+    return(
+        <h2>Heading: Hello World!</h2>
+    );
 }
 
-document.body.appendChild(insertElem());
+ReactDOM.render(<App />, document.getElementById('app'));

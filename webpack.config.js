@@ -3,18 +3,29 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  devtool: 'inline-source-map', //for debugging in error console
-  entry: './src/index.js',
-  mode: 'development',
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/' //important to serve everything from app folder
-  },
-  plugins: [
-    new CleanWebpackPlugin({cleanStaleWebpackAssets: false}),
-    new HtmlWebpackPlugin({
-       title: 'Development Output Manangement'
-    })
-  ]
+    devtool: 'inline-source-map', //for debugging in error console
+    entry: './src/index.js',
+    mode: 'development',
+    module: {
+        rules: [
+            {
+                test: /\.?(js|jsx)$/,
+                exclude: /(node_modules)/,
+                use: {
+                    loader: 'babel-loader'
+                }
+            }
+        ]
+    },
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: '/' //important to serve everything from app folder
+    },
+    plugins: [
+        new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
+        new HtmlWebpackPlugin({
+            template: 'src/index.html'
+        })
+    ]
 };
