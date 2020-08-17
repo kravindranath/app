@@ -5,9 +5,17 @@
   "author": "Ravindranath K <ravindranath.k@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "server" : "node server.js"
+    "dev": "webpack --config webpack.config.js",
+    "server": "node server.js"
   },
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^4.3.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-middleware": "^3.7.2"
   }
 }
