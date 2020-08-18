@@ -25,7 +25,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
         new HtmlWebpackPlugin({
-            template: 'src/index.html'
+            template: 'views/layouts/main.hbs'
         })
     ]
 };

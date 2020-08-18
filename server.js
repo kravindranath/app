@@ -1,7 +1,14 @@
 const express = require('express');
+const path = require('path');
+const expressHandlebars = require('express-handlebars')
 
 const PORT = 1985;
 app = new express();
+
+app.engine('.hbs', expressHandlebars({
+    extname: '.hbs'
+}));
+app.set('view engine', '.hbs');
 
 //for webpack middleware with express
 const webpack = require('webpack');
@@ -18,7 +25,7 @@ app.listen(PORT,()=>{
     console.log(`listening to port ${PORT}`);
 });
 
-
+/*
 //----------------LOAD mock API using express ------------------------------------
 
 const loadApi = require('./helpers/loadApi');
@@ -40,3 +47,4 @@ app.get('/api/:filename.json', function(req, res){
 app.get('/', function(req, res){
     res.send('App Home');
 });
+*/
