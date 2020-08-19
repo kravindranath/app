@@ -7,7 +7,7 @@ module.exports = {
     entry: './src/index.js',
     mode: 'development',
     resolve: {
-        extensions: ['.js', '.json', '.jsx']
+        extensions: ['.js', '.json', '.jsx', '.html']
     },
     module: {
         rules: [
@@ -24,11 +24,12 @@ module.exports = {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/' //important to serve everything from app folder
-    },
+    }
+    ,
     plugins: [
         new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
         new HtmlWebpackPlugin({
-            template: 'views/layouts/main.hbs'
+            template: 'src/main.html'
         })
     ]
 };

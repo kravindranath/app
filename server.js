@@ -1,13 +1,7 @@
 const express = require('express');
-const expressHandlebars = require('express-handlebars');
 
 const PORT = 1985;
 app = new express();
-
-app.engine('.hbs', expressHandlebars({
-    extname: '.hbs'
-}));
-app.set('view engine', '.hbs');
 
 //for webpack middleware with express
 const webpack = require('webpack');
