@@ -6,6 +6,9 @@ module.exports = {
     devtool: 'inline-source-map', //for debugging in error console
     entry: './src/index.js',
     mode: 'development',
+    resolve: {
+        extensions: ['.js', '.json', '.jsx']
+    },
     module: {
         rules: [
             {

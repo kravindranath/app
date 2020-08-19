@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Home from './Home'
 
-function Home(){
+function App(){
     return(
-        <h2>Home: Hello World!</h2>
+        <Home />
     );
 }
 
-ReactDOM.render(<Home />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('app'));
