@@ -5,8 +5,8 @@
   "author": "Ravindranath K <ravindranath.k@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack --config webpack.config.js",
-    "server": "node server.js"
+    "bundle": "webpack --config webpack.config.js",
+    "server": "babel-node server/index.js"
   },
   "dependencies": {
     "express": "^4.17.1",
@@ -16,7 +16,8 @@
     "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.1",
+    "@babel/core": "^7.11.4",
+    "@babel/node": "^7.10.5",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.1.0",
@@ -24,6 +25,7 @@
     "html-webpack-plugin": "^4.3.0",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-middleware": "^3.7.2"
+    "webpack-dev-middleware": "^3.7.2",
+    "webpack-node-externals": "^2.5.2"
   }
 }
